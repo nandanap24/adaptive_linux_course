@@ -118,3 +118,37 @@ CREATE TABLE user_progress (
 );
 
 COMMIT;
+
+CREATE TABLE lab_steps (
+    id SERIAL PRIMARY KEY,
+
+    lab_id INTEGER NOT NULL
+        REFERENCES labs(id)
+        ON DELETE CASCADE,
+
+    step_number INTEGER NOT NULL,
+
+    instruction TEXT NOT NULL,
+
+    command_hint TEXT,
+
+    explanation TEXT,
+
+    required_command TEXT,
+
+    validation_command TEXT NOT NULL,
+
+    expected_output TEXT NOT NULL
+);
+
+CREATE TABLE labs (
+    id SERIAL PRIMARY KEY,
+
+    subtopic_id INTEGER NOT NULL
+        REFERENCES subtopics(id)
+        ON DELETE CASCADE,
+
+    title TEXT NOT NULL,
+
+    instructions TEXT
+);
