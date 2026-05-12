@@ -154,7 +154,6 @@ The main database tables used in the platform are:
 | `labs`            | Stores guided lab metadata                                |
 | `lab_steps`       | Stores step-by-step lab instructions and validation rules |
 | `topics`          | Stores major learning topics inside modules               |
-| `question_options`| Stores quiz answer options                                |
 | `progress`        | Stores learner progress and completion state              |
 | `users`           | Stores learner authentication information                 |
 
